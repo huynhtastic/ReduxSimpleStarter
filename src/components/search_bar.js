@@ -21,10 +21,12 @@ class SearchBar extends Component {
     // return <input onChange={event => console.log(event.target.value)} />;
     // => is the same as function(event) {} or a function definition
     // bad way to set state: this.state.term = event.target.value
+    // now a controlled component with the value attribute
     return (
       <div>
-        <input onChange={event => this.setState(
-          { term: event.target.value })} />
+        <input
+          value={this.state.term}
+          onChange={event => this.setState({ term: event.target.value })} />
       </div>
     );
   }
