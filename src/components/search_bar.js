@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 
 class SearchBar extends Component {
+  // defining state for class based components
+  constructor(props) {
+    // first and only function called automatically whenever a new instance is
+    // created
+    super(props);
+
+    // properties that we wanted to record to thge state
+    // term being search term
+    this.state = { term: '' };
+  }
+
   render() {
     // refactored 1.16.1 return <input onChange={this.onInputChange} />;
     // create an input with onChange property and have onChange trigger
