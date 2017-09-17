@@ -23,10 +23,10 @@ class SearchBar extends Component {
     // bad way to set state: this.state.term = event.target.value
     // now a controlled component with the value attribute
     return (
-      <div>
+      <div className="search-bar">
         <input
           value={this.state.term}
-          onChange={event => this.setState({ term: event.target.value })} />
+          onChange={event => this.onInputChange(event.target.value)} />
       </div>
     );
   }
@@ -37,6 +37,11 @@ class SearchBar extends Component {
     console.log(event.target.value);
   }
   */
+
+  onInputChange(term) {
+    this.setState({term});
+    this.props.onSearchTermChange(term);
+  }
 }
 
 export default SearchBar;
